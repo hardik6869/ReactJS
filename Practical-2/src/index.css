@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.navbar{
+    background-color: black;
+    outline: none;
+    border: none;
+}
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+.nav-link:hover{
+    border-radius: 5px;
+    color: orange;
+    border-bottom: 1px solid orange;
+}
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box_style{
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgb(194, 194, 194) 0%, rgba(0,0,0,1) 87%, rgba(0,0,0,1) 100%, rgba(0,212,255,1) 100%);
+}
+.desc_style{
+    
+    background-color: rgba(white,0.5);
+}
