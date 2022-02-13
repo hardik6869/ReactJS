@@ -11,7 +11,7 @@ const Weather = (): JSX.Element => {
         const weatherApi = async (): Promise<void> => {
             try {
                 const response: Response = await fetch(
-                    `http://api.openweathermap.org/data/2.5/weather?q=${search}&appid=fe62a5a7ab625d3395e7af85e6585513&units=metric`,
+                    `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=fe62a5a7ab625d3395e7af85e6585513&units=metric`,
                 );
                 if (response.status === 404) {
                     alert(' Please, Enter Valid City, State or Country name. ');
