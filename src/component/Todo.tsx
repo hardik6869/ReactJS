@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import TodoForm from './TodoForm';
 import Todo_Date from './Todo_Date';
 
-const Todo = () => {
-    const [show, setShow] = useState(true);
+const Todo = (): JSX.Element => {
     return (
         <>
             <div className="container pb-5 mt-5">
@@ -13,21 +12,8 @@ const Todo = () => {
                             <div className="m-5">
                                 <div className="mt-3">
                                     <Todo_Date />
-                                    <div className="col">
-                                        {!show ? <TodoForm /> : null}
-                                    </div>
-                                    <div className="position-relative mr-5 d-flex justify-content-center">
-                                        <button
-                                            className={`position-absolute ml-5 text-muted btn_Add translate-middle`}
-                                            onClick={() => setShow(false)}
-                                            style={{
-                                                display: show
-                                                    ? 'block'
-                                                    : 'none',
-                                            }}>
-                                            +
-                                        </button>
-                                    </div>
+
+                                    <TodoForm />
                                 </div>
                             </div>
                         </div>

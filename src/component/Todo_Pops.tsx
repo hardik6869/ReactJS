@@ -10,8 +10,7 @@ const Todo_Pops = (props: {
     };
     return (
         <>
-            <div
-                className={`d-flex justify-content-between pt-3 mb-3 item_event`}>
+            <div className={`d-flex justify-content-between pt-4 item_event`}>
                 <p className={listItem ? 'item_style' : ''}>
                     {props.description}
                 </p>
