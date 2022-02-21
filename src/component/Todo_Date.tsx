@@ -9,7 +9,7 @@ const Todo_Date = (): JSX.Element => {
 
     return (
         <>
-            <div className="d-flex justify-content-between mb-5">
+            <div className="d-flex justify-content-between mb-3">
                 <div className="row ml-2 big">
                     <h1 className="font-weight-bold big">{date}</h1>
                     <span className="justify-content-inline">

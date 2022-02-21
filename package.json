@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.17.0",
-    "react-router-dom": "^6.2.1"
+    "react-router-dom": "^6.2.1",
+    "smooth-scrollbar": "^8.7.4"
   }
 }
