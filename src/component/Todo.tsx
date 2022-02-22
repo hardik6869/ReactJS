@@ -12,7 +12,6 @@ const Todo = (): JSX.Element => {
                             <div className="m-5">
                                 <div className="mt-3">
                                     <Todo_Date />
-
                                     <TodoForm />
                                 </div>
                             </div>

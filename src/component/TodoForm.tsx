@@ -14,7 +14,7 @@ const TodoForm = (): JSX.Element => {
 
     const addTimeList = (): void => {
         if (input === '') {
-            alert('Please Valid Data');
+            alert('Please Enter Something');
         } else {
             setItemList((oldItems) => {
                 return [...oldItems, input];
@@ -32,7 +32,7 @@ const TodoForm = (): JSX.Element => {
     };
     return (
         <>
-            <div className="col list">
+            <div className="col">
                 {!show ? (
                     <div className="row justify-content-center">
                         <input
@@ -51,15 +51,17 @@ const TodoForm = (): JSX.Element => {
                         </button>
                     </div>
                 ) : null}
-                {itemList.map((val, index) => {
-                    return (
-                        <Todo_Pops
-                            description={val}
-                            check={false}
-                            key={index}
-                        />
-                    );
-                })}
+                <div className="list">
+                    {itemList.map((val, index) => {
+                        return (
+                            <Todo_Pops
+                                description={val}
+                                check={false}
+                                key={index}
+                            />
+                        );
+                    })}
+                </div>
             </div>
             <div className="position-relative mr-5 d-flex justify-content-center">
                 <button
