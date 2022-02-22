@@ -1,7 +1,10 @@
 const asyncHandler = require('express-async-handler');
 
+const Todo =  require('../model/TodoModel')
+
 const getTodo = asyncHandler(async(req,res)=> {
-    res.status(200).json({message: 'Get Goals'})
+    const todo = await Todo.find()
+    res.status(200).json({todo})
 })
 
 const setTodo = asyncHandler(async(req,res)=> {
@@ -9,15 +12,22 @@ const setTodo = asyncHandler(async(req,res)=> {
         res.status(400)
         throw new Error("Please add a Text")
     }
-    res.status(200).json({message: 'Set Goals'})
+    const todo = await Todo.create(req.body);
+    res.status(200).json({todo})
 })
 
 const updateTodo = asyncHandler(async(req,res)=> {
-    res.status(200).json({message: `Update Todo ${req.params.id}`})
+    const updatedtodo = await Todo.findByIdAndUpdate(req.params.id, req.body, { new: true})
+    res.status(200).json({updatedtodo})
 })
 
 const deleteTodo = asyncHandler(async(req,res)=> {
-    res.status(200).json({message: `Delete Todo ${req.params.id}`});
+    const todo = await Todo.findByIdAndRemove(req.params.id);
+    if (!todo) {
+        res.status(400);
+        throw new Error('Todo Not Found');
+    }
+    res.status(200).json({data: {}})
 })
 
 
