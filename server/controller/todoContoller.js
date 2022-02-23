@@ -22,14 +22,14 @@ const updateTodo = asyncHandler(async(req,res)=> {
 })
 
 const deleteTodo = asyncHandler(async(req,res)=> {
-    const todo = await Todo.findByIdAndRemove(req.params.id);
-    if (!todo) {
+    const todo = await Todo.findByIdAndDelete(req.params.id);
+    if (todo) {
         res.status(400);
         throw new Error('Todo Not Found');
     }
-    res.status(200).json({data: {}})
+    await todo.remove();
+    res.status(200).json({id: req.params.id})
 })
-
 
 module.exports = {
     getTodo,
