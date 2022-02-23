@@ -15,7 +15,7 @@ const TodoList = (): JSX.Element => {
     const fetchItemList = async (): Promise<void> => {
         try {
             const response: Response = await fetch(
-                'http://localhost:5000/api/TodoApp',
+                'https://todo-backend-ts.herokuapp.com/api/TodoApp',
             );
             const data = await response.json();
             setItemList(data.todo);
@@ -27,7 +27,7 @@ const TodoList = (): JSX.Element => {
     const addTodoItem = async (todoItem: string): Promise<void> => {
         if (todoItem.trim().length > 0) {
             const res: Response = await fetch(
-                'http://localhost:5000/api/TodoApp',
+                'https://todo-backend-ts.herokuapp.com/api/TodoApp',
                 {
                     method: 'POST',
                     headers: {
@@ -47,9 +47,12 @@ const TodoList = (): JSX.Element => {
     const deleteTodoItem = async (_id: string) => {
         console.log(_id);
         if (window.confirm('Are you sure you want to delete this Todo?')) {
-            await fetch(`http://localhost:5000/api/TodoApp/${_id}`, {
-                method: 'DELETE',
-            });
+            await fetch(
+                `https://todo-backend-ts.herokuapp.com/api/TodoApp/${_id}`,
+                {
+                    method: 'DELETE',
+                },
+            );
             setItemList(itemList.filter((todo) => todo._id !== _id));
         }
     };

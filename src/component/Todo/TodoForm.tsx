@@ -33,7 +33,7 @@ const TodoForm: FC<props> = ({handleAdd, keyEvent}): JSX.Element => {
                         required
                     />
                     <button
-                        className="show_btn btn btn-primary rounded-circle p-3"
+                        className="show_btn btn btn-primary rounded-ractangle ml-3 p-2"
                         type="submit">
                         Add
                     </button>
