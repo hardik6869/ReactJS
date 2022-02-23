@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoForm from './TodoForm';
+import TodoList from './TodoList';
 import Todo_Date from './Todo_Date';
 
 const Todo = (): JSX.Element => {
@@ -12,7 +12,7 @@ const Todo = (): JSX.Element => {
                             <div className="m-5">
                                 <div className="mt-3">
                                     <Todo_Date />
-                                    <TodoForm />
+                                    <TodoList />
                                 </div>
                             </div>
                         </div>

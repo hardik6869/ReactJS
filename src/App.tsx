@@ -3,7 +3,7 @@ import {Link, Route, Routes} from 'react-router-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
 import About from './component/About';
 import Services from './component/Services';
-import Todo from './component/Todo';
+import Todo from './component/Todo/Todo';
 
 class App extends React.Component {
     render() {
