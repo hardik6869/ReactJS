@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {TodoInf} from '../interface/Infs';
 import TodoForm from './TodoForm';
 import Todo_Pops from './Todo_Pops';
 
 const TodoList = (): JSX.Element => {
     const [itemList, setItemList] = useState<TodoInf[]>([]);
-
     const [show, setShow] = useState<boolean>(true);
 
+    // Fetch Todo Items using useEffect
     React.useEffect((): void => {
         fetchItemList();
     }, []);
@@ -24,6 +24,7 @@ const TodoList = (): JSX.Element => {
         }
     };
 
+    // Add Todo Item 
     const addTodoItem = async (todoItem: string): Promise<void> => {
         if (todoItem.trim().length > 0) {
             const res: Response = await fetch(
@@ -44,6 +45,7 @@ const TodoList = (): JSX.Element => {
         }
     };
 
+    // Delete Todo Item
     const deleteTodoItem = async (_id: string) => {
         console.log(_id);
         if (window.confirm('Are you sure you want to delete this Todo?')) {
@@ -56,6 +58,8 @@ const TodoList = (): JSX.Element => {
             setItemList(itemList.filter((todo) => todo._id !== _id));
         }
     };
+
+    // Escape & Enter Event
 
     const keyEvent = (e: {key: string}): void => {
         if (e.key == 'Enter') {

@@ -9,10 +9,13 @@ type KeyEve = (e: {key: string}) => void;
 
 const TodoForm: FC<props> = ({handleAdd, keyEvent}): JSX.Element => {
     const [text, setText] = useState<string>('');
+
+    // onCHange input Event 
     const onChangeItem = (e: React.FormEvent<HTMLInputElement>): void => {
         setText(e.currentTarget.value);
     };
 
+    // onSubmit Event (Button Click)
     const handleData = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
         handleAdd(text);

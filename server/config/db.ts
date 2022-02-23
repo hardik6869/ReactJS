@@ -5,7 +5,7 @@ const connectDB = async (): Promise<void> => {
         const conn = await mongoose.connect(
             'mongodb+srv://HardikS:hardik6869@cluster0.sixsh.mongodb.net/TodoReact?retryWrites=true&w=majority',
         );
-        console.log(`MONGODB Connected : ${conn.connection.host}`);
+        console.log(`Mongodb Connected : ${conn.connection.host}`);
     } catch (error) {
         console.log(error);
         process.exit(1);

@@ -1,11 +1,13 @@
 import asyncHandler from 'express-async-handler';
 import Todo from '../model/TodoModel';
 
+// get Todo Data
 const getTodo = asyncHandler(async (req, res): Promise<void> => {
     const todo = await Todo.find();
     res.status(200).json({todo});
 });
 
+// set Todo Data
 const setTodo = asyncHandler(async (req, res): Promise<void> => {
     if (!req.body.text) {
         res.status(400);
@@ -15,7 +17,7 @@ const setTodo = asyncHandler(async (req, res): Promise<void> => {
     res.status(200).json({todo});
 });
 
-
+// Delete Todo Data
 const deleteTodo = asyncHandler(async (req, res): Promise<void> => {
     const todo = await Todo.findByIdAndDelete(req.params.id);
     if (todo) {

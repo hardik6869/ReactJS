@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+// Develop a structure in Database
 const TodoSchema = new mongoose.Schema(
     {
         text: {

@@ -10,10 +10,8 @@ const Todo = (): JSX.Element => {
                     <div className="col-md-5">
                         <div className="card fw-bold text-center box-style">
                             <div className="m-5">
-                                <div className="mt-3">
-                                    <Todo_Date />
-                                    <TodoList />
-                                </div>
+                                <Todo_Date />
+                                <TodoList />
                             </div>
                         </div>
                     </div>
