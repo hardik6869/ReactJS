@@ -20,7 +20,7 @@ const setTodo = asyncHandler(async (req, res): Promise<void> => {
 // Delete Todo Data
 const deleteTodo = asyncHandler(async (req, res): Promise<void> => {
     const todo = await Todo.findByIdAndDelete(req.params.id);
-    if (todo) {
+    if (!todo) {
         res.status(400);
         throw new Error('Todo Not Found');
     }

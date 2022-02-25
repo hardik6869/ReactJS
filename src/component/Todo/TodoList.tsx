@@ -47,7 +47,6 @@ const TodoList = (): JSX.Element => {
 
     // Delete Todo Item
     const deleteTodoItem = async (_id: string) => {
-        console.log(_id);
         if (window.confirm('Are you sure you want to delete this Todo?')) {
             await fetch(
                 `https://todo-backend-ts.herokuapp.com/api/TodoApp/${_id}`,
