@@ -1,13 +1,11 @@
 import React from 'react';
 import UserComponent from './UserComponent';
-import UsersCard from './UsersCard';
 
-function Home() {
+function Home(): JSX.Element {
     return (
         <>
-            <div className="m-5 d-flex">
+            <div className="m-4">
                 <UserComponent />
-                <UsersCard />
             </div>
         </>
     );

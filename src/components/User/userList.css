@@ -37,23 +37,6 @@
     align-items: center;
 }
 
-.progress {
-    height: 10px;
-    border-radius: 10px;
-}
-
-.progress div {
-    background-color: red;
-}
-
-.text1 {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.text2 {
-    color: #a5aec0;
-}
 .selectMenu {
     width: auto;
     outline: none;

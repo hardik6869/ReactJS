@@ -1,33 +1,59 @@
 import React from 'react';
+import {UserDetails} from '../Interface/userAction';
+import './UserCard.css';
 
-const UsersCard = () => {
+const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
     return (
         <>
-            {/* <div className="userProfileCard">
-                <img src={value.avatar} alt="user_avatar" />
-                <p className="cardUserName p-0 m-0">
-                    {value.first_name} {value.last_name}
-                    <span className="userDot">&#729;</span>
-                </p>
-                <p className="cardUserEmail m-0">{value.email}</p>
-                <p className="cardUserPlan m-0">Your Plan: Standard</p>
-                <button>Active User</button>
-                <label className="cardUserPlanUsage p-0 mb-0">Plan Uses</label>
-                <div className="totalPlanUsage">
-                    <div className="currentPlanUsage"></div>
-                </div>
-                <div className="clicksNumWrapper">
-                    <div className="clicksReviewed">
-                        <div className="clicksNum1">2,450</div>
-                        <div className="clicksNumText1">clicks reviewed</div>
+            {user !== null && (
+                <div className="userCard bg-white">
+                    <img
+                        src={user.avatar}
+                        alt={user.first_name}
+                        className="avtar_img"
+                    />
+                    <p className="userName pt-2 m-0">
+                        {user.first_name} {user.last_name}
+                        <span
+                            className={`${
+                                user.status === 'Active'
+                                    ? 'text-success'
+                                    : 'text-secondary'
+                            }`}>
+                            &#729;
+                        </span>
+                    </p>
+                    <p className="userEmail m-1">{user.email}</p>
+                    <p className="userPlan m-0">Your Plan: {user.plan}</p>
+                    <button
+                        className={`btn ${
+                            user.status === 'Active'
+                                ? 'btn-warning'
+                                : 'btn-danger'
+                        } w-70 fw-bold text-white mt-2`}>
+                        {user.status} User
+                    </button>
+                    <label className="userPlanUses p-0 mb-0">Plan Uses</label>
+                    <div className="totalPlanUses">
+                        <div className="planBar"></div>
                     </div>
-                    <div className="clicksVerticleLine"></div>
-                    <div className="monthlyClicks">
-                        <div className="clicksNum2">5000</div>
-                        <div className="clicksNumText2">Monthly clicks</div>
+                    <div className="wrappedReviewe">
+                        <div>
+                            <div className="clickReviewed">{user.reviewed}</div>
+                            <div className="reviewedText">Clicks reviewed</div>
+                        </div>
+                        <div className="line"></div>
+                        <div>
+                            <div className="monthlyClick">
+                                {user.monthly_click}
+                            </div>
+                            <div className="monthlyClickText">
+                                Monthly clicks
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div> */}
+            )}
         </>
     );
 };
