@@ -1,27 +1,26 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {getAllUsers} from '../../reducers/userSlice';
-import UsersCard from './UsersCard';
-
+import {UserDetails} from '../Interface/userAction';
+import UserList from './usersrecord/UserList';
 const UserComponent = () => {
-    const users = useSelector(getAllUsers);
-    console.log(users);
-    let renderUsers = '';
-    renderUsers =
-        users.Response === 'True' ? (
-            users.map((user: any, index: React.Key | null | undefined) => {
-                <UsersCard key={index} data={user} />;
-            })
-        ) : (
-            <h3>{users.Error}</h3>
-        );
+    const records: UserDetails = useSelector((state) => state.user.user[0]);
     return (
         <>
             <div className="container">
-                <div className="row">
-                    <h1>Users</h1>
-                    <div> {renderUsers} </div>
-                </div>
+                <table className="table table-borderless col-md-auto main_div">
+                    <thead>
+                        <tr>
+                            <th className="pl-2">Name</th>
+                            <th className="pl-4">Status</th>
+                            <th className="pl-4">Acceess</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {records.map((userRecord: string, index: number) => {
+                            return <UserList data={userRecord} key={index} />;
+                        })}
+                    </tbody>
+                </table>
             </div>
         </>
     );
