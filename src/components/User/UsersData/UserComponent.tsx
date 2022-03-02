@@ -80,9 +80,7 @@ const UserComponent: FC<{data: UserDetails}> = ({data}): JSX.Element => {
                         </>
                     )}
                     {/* User Profile Component */}
-                    <td>
-                        <UsersCard user={user} />
-                    </td>
+                    <td>{user !== null && <UsersCard user={user} />}</td>
                 </tr>
             </tbody>
         </>

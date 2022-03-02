@@ -3,8 +3,6 @@ import {UserDetails} from '../../Interface/userAction';
 import './UserCard.css';
 
 const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
-    console.log('sdfj');
-
     return (
         <>
             {/* User Profile Page */}
