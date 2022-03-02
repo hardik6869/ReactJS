@@ -18,7 +18,8 @@ const UserList = (): JSX.Element => {
                             <th className="pl-4">Acceess</th>
                         </tr>
                     </thead>
-                    {/* Map Users details */}
+
+                    {/* Map Users  */}
                     {records.map((userRecord: string, index: number) => {
                         return <UserComponent data={userRecord} key={index} />;
                     })}

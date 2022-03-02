@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {UserDetails} from '../../Interface/userAction';
 import './UserCard.css';
 
 const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
+    console.log('sdfj');
+
     return (
         <>
             {/* User Profile Page */}
@@ -60,4 +62,4 @@ const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
     );
 };
 
-export default UsersCard;
+export default memo(UsersCard);
