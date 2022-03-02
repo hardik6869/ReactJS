@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {UserDetails} from '../components/Interface/userAction';
-import {userInfo} from '../components/User/userInfo';
+import {userInfo} from '../components/User/Data/userInfo';
 
 const initialState: {
     user: {
@@ -25,7 +25,6 @@ const userSlice = createSlice({
     reducers: {},
 });
 
-// export const {showUsers} = userSlice.actions;
 export const getAllUsers = (state: {user: UserDetails}): string =>
     state.user.user;
 export default userSlice.reducer;

@@ -1,11 +1,11 @@
 import React from 'react';
-import UserComponent from './UserComponent';
+import UserList from './UserList';
 
 function Home(): JSX.Element {
     return (
         <>
-            <div className="m-4">
-                <UserComponent />
+            <div className="m-2">
+                <UserList />
             </div>
         </>
     );

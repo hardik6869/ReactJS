@@ -1,5 +1,5 @@
 import React from 'react';
-import {UserDetails} from '../Interface/userAction';
+import {UserDetails} from '../../Interface/userAction';
 import './UserCard.css';
 
 const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
@@ -19,7 +19,8 @@ const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
                                 user.status === 'Active'
                                     ? 'text-success'
                                     : 'text-secondary'
-                            }`}>
+                            }`}
+                            style={{fontSize: '1.5rem'}}>
                             &#729;
                         </span>
                     </p>
