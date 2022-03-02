@@ -49,6 +49,7 @@ const UserComponent: FC<{data: UserDetails}> = ({data}): JSX.Element => {
                                 </select>
                             </td>
                             <td>
+                                {/* feather Icon */}
                                 <Icon.Trash2
                                     size={18}
                                     style={{color: 'rgba(0, 0, 0, 0.6)'}}
@@ -92,6 +93,7 @@ const UserComponent: FC<{data: UserDetails}> = ({data}): JSX.Element => {
                                 <span className="pl-4">{data.access}</span>
                             </td>
                             <td>
+                                {/* feather Icon */}
                                 <Icon.Lock
                                     size={18}
                                     style={{color: 'rgba(0, 0, 0, 0.6)'}}
@@ -99,6 +101,7 @@ const UserComponent: FC<{data: UserDetails}> = ({data}): JSX.Element => {
                             </td>
                         </>
                     )}
+                    {/* User Profile Component */}
                     <td className="positon-relative">
                         <UsersCard user={user} />
                     </td>

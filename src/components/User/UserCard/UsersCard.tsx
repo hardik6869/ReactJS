@@ -5,6 +5,7 @@ import './UserCard.css';
 const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
     return (
         <>
+            {/* User Profile Page */}
             {user !== null && (
                 <div className="userCard bg-white">
                     <img

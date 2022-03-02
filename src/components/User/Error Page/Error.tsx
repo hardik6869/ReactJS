@@ -1,8 +1,9 @@
 import React from 'react';
 
-export const Error = () => {
+export const Error = (): JSX.Element => {
     return (
         <>
+            {/* Error Page  */}
             <hr />
             <div className="container mt-5 text-center">
                 <h2 className="text-danger"> 404 Error Page </h2>

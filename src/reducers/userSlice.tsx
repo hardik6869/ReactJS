@@ -1,7 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {UserDetails} from '../components/Interface/userAction';
 import {userInfo} from '../components/User/Data/userInfo';
-
 const initialState: {
     user: {
         id: number;

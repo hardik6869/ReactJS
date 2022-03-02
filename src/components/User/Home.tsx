@@ -4,6 +4,7 @@ import UserList from './UserList';
 function Home(): JSX.Element {
     return (
         <>
+            {/* Users Home */}
             <div className="m-2">
                 <UserList />
             </div>

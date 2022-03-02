@@ -1,3 +1,4 @@
+//  Users Data (Array of an object)
 export const userInfo = [
     {
         id: 1,

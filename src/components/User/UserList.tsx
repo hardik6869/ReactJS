@@ -8,6 +8,7 @@ const UserList = (): JSX.Element => {
     );
     return (
         <>
+            {/* Users List */}
             <div className="container">
                 <table className="table table-borderless main_div">
                     <thead>
@@ -17,7 +18,7 @@ const UserList = (): JSX.Element => {
                             <th className="pl-4">Acceess</th>
                         </tr>
                     </thead>
-
+                    {/* Map Users details */}
                     {records.map((userRecord: string, index: number) => {
                         return <UserComponent data={userRecord} key={index} />;
                     })}
