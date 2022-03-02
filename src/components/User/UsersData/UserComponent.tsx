@@ -2,7 +2,7 @@ import React, {FC, memo, useState} from 'react';
 import './UserComponent.css';
 import * as Icon from 'react-feather';
 import {UserDetails} from '../../Interface/userAction';
-import UsersCard from '../UserCard/UsersCard';
+import UsersCard from '../UserCard/UserCard';
 
 const UserComponent: FC<{data: UserDetails}> = ({data}): JSX.Element => {
     const [user, setUser] = useState<UserDetails | null>(null);

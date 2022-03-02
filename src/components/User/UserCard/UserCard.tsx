@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {UserDetails} from '../../Interface/userAction';
 import './UserCard.css';
 
@@ -60,4 +60,4 @@ const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
     );
 };
 
-export default memo(UsersCard);
+export default UsersCard;
