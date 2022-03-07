@@ -1,11 +1,10 @@
 import React from 'react';
-import {RootStateOrAny, useSelector} from 'react-redux';
-import {UserDetails} from '../Interface/userAction';
+import {UsersAction} from '../Interface/userAction';
+import {useListPostsQuery} from './Data/usersAPI';
 import UserComponent from './UsersData/UserComponent';
 const UserList = (): JSX.Element => {
-    const records: UserDetails = useSelector(
-        (state: RootStateOrAny) => state.user.user[0],
-    );
+    const {data: data, isLoading} = useListPostsQuery(1);
+
     return (
         <>
             {/* Users List */}
@@ -18,11 +17,20 @@ const UserList = (): JSX.Element => {
                             <th className="pl-4">Acceess</th>
                         </tr>
                     </thead>
-
+                    <tbody>
+                        {isLoading && '... Loading'}
+                        {data?.data.map(
+                            (userRecord: UsersAction, index: React.Key) => {
+                                return (
+                                    <UserComponent
+                                        data={userRecord}
+                                        key={index}
+                                    />
+                                );
+                            },
+                        )}
+                    </tbody>
                     {/* Map Users  */}
-                    {records.map((userRecord: string, index: number) => {
-                        return <UserComponent data={userRecord} key={index} />;
-                    })}
                 </table>
             </div>
         </>

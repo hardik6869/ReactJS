@@ -1,8 +1,8 @@
 import React from 'react';
-import {UserDetails} from '../../Interface/userAction';
+import {UsersAction} from '../../Interface/userAction';
 import './UserCard.css';
 
-const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
+const UsersCard = ({user}: {user: UsersAction | null}): JSX.Element => {
     return (
         <>
             {/* User Profile Page */}
@@ -17,7 +17,7 @@ const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
                         {user.first_name} {user.last_name}
                         <span
                             className={`${
-                                user.status === 'Active'
+                                user.id === 1
                                     ? 'text-success'
                                     : 'text-secondary'
                             }`}
@@ -26,14 +26,12 @@ const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
                         </span>
                     </p>
                     <p className="userEmail m-1">{user.email}</p>
-                    <p className="userPlan m-0">Your Plan: {user.plan}</p>
+                    <p className="userPlan m-0">Your Plan: Standard</p>
                     <button
                         className={`btn ${
-                            user.status === 'Active'
-                                ? 'btn-warning'
-                                : 'btn-danger'
+                            user.id === 1 ? 'btn-warning' : 'btn-danger'
                         } w-70 fw-bold text-white mt-2`}>
-                        {user.status} User
+                        {user.id === 1 ? 'Active User' : 'Inactive User'}
                     </button>
                     <label className="userPlanUses p-0 mb-0">Plan Uses</label>
                     <div className="totalPlanUses">
@@ -41,14 +39,12 @@ const UsersCard = ({user}: {user: UserDetails | null}): JSX.Element => {
                     </div>
                     <div className="wrappedReviewe">
                         <div>
-                            <div className="clickReviewed">{user.reviewed}</div>
+                            <div className="clickReviewed">2450</div>
                             <div className="reviewedText">Clicks reviewed</div>
                         </div>
                         <div className="line"></div>
                         <div>
-                            <div className="monthlyClick">
-                                {user.monthly_click}
-                            </div>
+                            <div className="monthlyClick">5000</div>
                             <div className="monthlyClickText">
                                 Monthly clicks
                             </div>

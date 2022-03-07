@@ -1,4 +1,4 @@
-export interface UserDetails {
+export interface UsersAction {
     user: string;
     map(
         arg0: (userRecord: string, index: number) => JSX.Element,
@@ -8,9 +8,11 @@ export interface UserDetails {
     last_name: string;
     email: string;
     avatar: string;
-    plan: string;
-    status: string;
-    access: string;
-    reviewed: number;
-    monthly_click: number;
+}
+export interface usersList<T> {
+    page: number;
+    per_page: number;
+    total: number;
+    total_pages: number;
+    data: T[];
 }

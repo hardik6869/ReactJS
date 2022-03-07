@@ -1,26 +1,11 @@
-import {createSlice} from '@reduxjs/toolkit';
-import {userInfo} from '../components/User/Data/userInfo';
-const initialState: {
-    user: {
-        id: number;
-        first_name: string;
-        last_name: string;
-        email: string;
-        avatar: string;
-        plan: string;
-        status: string;
-        access: string;
-        reviewed: number;
-        monthly_click: number;
-    }[][];
-} = {
-    user: [userInfo],
-};
+import {configureStore} from '@reduxjs/toolkit';
 
-const userSlice = createSlice({
-    name: 'users',
-    initialState,
-    reducers: {},
+import {api} from '../components/User/Data/usersAPI';
+
+export const store = configureStore({
+    reducer: {
+        [api.reducerPath]: api.reducer,
+    },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(api.middleware),
 });
-
-export default userSlice.reducer;
