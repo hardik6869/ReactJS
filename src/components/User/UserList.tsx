@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {UsersAction} from '../Interface/userAction';
 import {useListPostsQuery} from './Data/usersAPI';
 import UserComponent from './UsersData/UserComponent';
+
 const UserList = (): JSX.Element => {
-    const {data: data, isLoading} = useListPostsQuery(1);
+    const [page, setPage] = useState(1);
+    const {data: data, isLoading} = useListPostsQuery(page);
 
     return (
         <>
@@ -30,8 +32,32 @@ const UserList = (): JSX.Element => {
                             },
                         )}
                     </tbody>
+
                     {/* Map Users  */}
                 </table>
+                <div className="justify-content-center d-flex align-item">
+                    <button
+                        onClick={() => setPage(page > 1 ? page - 1 : page)}
+                        className="btn btn-light mr-3 shadow rounded">
+                        <i className="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button
+                        onClick={() => setPage(1)}
+                        className="btn btn-light mr-3 shadow rounded">
+                        1
+                    </button>
+                    <button
+                        onClick={() => setPage(2)}
+                        className="btn btn-light mr-3 shadow rounded">
+                        2
+                    </button>
+
+                    <button
+                        onClick={() => setPage(page < 2 ? page + 1 : page)}
+                        className="btn btn-light shadow rounded">
+                        Next <i className="fas fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
         </>
     );
