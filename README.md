@@ -11,3 +11,9 @@ Practical-4
 
 Practical-3
 [Live Demo](https://zealous-williams-05a4f2.netlify.app/)
+
+Practical-5
+[Live Demo](https://user-list-react-app.netlify.app/)
+
+Practical-6
+[Live Demo](https://user-list-app-p6.netlify.app/)
