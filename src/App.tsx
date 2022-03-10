@@ -1,42 +1,42 @@
 import React from 'react';
-import {Link, Route, Routes} from 'react-router-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
-import About from './component/About';
-import Services from './component/Services';
-import Todo from './component/Todo';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import About from './components/User/About';
+import Home from './components/User/Home';
+import Services from './components/User/Services';
+import Error from './components/User/Error Page/Error';
+import Deployment from './components/User/Deployment';
 
-class App extends React.Component {
-    render() {
-        return (
-            <>
-                <Router>
-                    <div className="navbar navbar-expand-lg navbar-light bg-dark">
-                        <div className="container ml-5">
-                            <div className="row">
-                                <h2 className="text-white"> TodoList </h2>
-                                <Link to={'/'} className="pl-5 nav-link">
-                                    <h5> Todo </h5>
-                                </Link>
-                                <Link
-                                    to={'/services'}
-                                    className="pl-5 nav-link">
-                                    <h5> Services </h5>
-                                </Link>
-                                <Link to={'/about'} className="pl-5 nav-link">
-                                    <h5> About </h5>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <Routes>
-                        <Route path="/" element={<Todo />} />
-                        <Route path="/services" element={<Services />} />
-                        <Route path="/about" element={<About />} />
-                    </Routes>
-                </Router>
-            </>
-        );
-    }
+function App() {
+    return (
+        <>
+            <Router>
+                <nav className="navbar navbar-dark bg-light d-flex justify-content-center rounded">
+                    <Link to={'/Home'} className="btn btn-outline-primary m-2">
+                        Home
+                    </Link>
+                    <Link to={'/'} className="btn btn-outline-primary m-2">
+                        Deployment
+                    </Link>
+                    <Link
+                        to={'/services'}
+                        className="btn btn-outline-primary m-2">
+                        Services
+                    </Link>
+                    <Link to={'/about'} className="btn btn-outline-primary m-2">
+                        About
+                    </Link>
+                </nav>
+
+                <Routes>
+                    <Route path="/Home" element={<Home />} />
+                    <Route path="/services" element={<Services />} />
+                    <Route path="/" element={<Deployment />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="*" element={<Error />} />
+                </Routes>
+            </Router>
+        </>
+    );
 }
 
 export default App;

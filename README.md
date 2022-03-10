@@ -1,19 +1,20 @@
-# React Practical
+Practical-7 React-Deploy-App
+[React-Deploy-App](https://deployment-p7.netlify.app/)
 
-Practical-1
-[Live Demo](https://pract-1-cra.netlify.app/)
+Azure
+[Live Demo](https://react-deployment-app.azurewebsites.net/)
 
-Practical-2
-[Live Demo](https://weather-informatiion-app.netlify.app/)
+Firebase
+[Live Demo](https://react-deployment-app-5aab9.web.app/)
 
-Practical-4
-[Live Demo](https://todo-react-app-p-4.netlify.app/)
+Github
+[Live Demo](https://hardik6869.github.io/React-Deploy-App/)
 
-Practical-3
-[Live Demo](https://zealous-williams-05a4f2.netlify.app/)
+Netlify
+[Live Demo](https://react-deployment-p7.netlify.app/)
 
-Practical-5
-[Live Demo](https://user-list-react-app.netlify.app/)
+Vercel
+[Live Demo](https://react-deploy-app-3z8pv6axp-hardik6869.vercel.app/)
 
-Practical-6
-[Live Demo](https://user-list-app-p6.netlify.app/)
+Heroku
+[Live Demo](https://react-deployment-p7.herokuapp.com/)
