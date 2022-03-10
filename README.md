@@ -1,4 +1,5 @@
 Practical-7 React-Deploy-App
+[React-Deploy-App](https://deployment-p7.netlify.app/)
 
 Azure
 [Live Demo](https://react-deployment-app.azurewebsites.net/)
