@@ -11,12 +11,10 @@ function App() {
         <>
             <Router>
                 <nav className="navbar navbar-dark bg-light d-flex justify-content-center rounded">
-                    <Link to={'/'} className="btn btn-outline-primary m-2">
+                    <Link to={'/Home'} className="btn btn-outline-primary m-2">
                         Home
                     </Link>
-                    <Link
-                        to={'/deployment'}
-                        className="btn btn-outline-primary m-2">
+                    <Link to={'/'} className="btn btn-outline-primary m-2">
                         Deployment
                     </Link>
                     <Link
@@ -30,9 +28,9 @@ function App() {
                 </nav>
 
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/Home" element={<Home />} />
                     <Route path="/services" element={<Services />} />
-                    <Route path="/deployment" element={<Deployment />} />
+                    <Route path="/" element={<Deployment />} />
                     <Route path="/about" element={<About />} />
                     <Route path="*" element={<Error />} />
                 </Routes>

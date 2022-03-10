@@ -3,7 +3,7 @@ import React from 'react';
 function Deployment() {
     return (
         <>
-            <div className="container">
+            <div className="container shadow mt-5">
                 <hr />
                 <table className="table table-striped table-secondary">
                     <tbody>
@@ -12,7 +12,8 @@ function Deployment() {
                             <td>Firebase</td>
                             <td>Github</td>
                             <td>Netlify</td>
-                            {/* <td>Heroku</td> */}
+                            <td>Vercel</td>
+                            <td>Heroku</td>
                         </tr>
                         <tr>
                             <td className="p-3">
@@ -21,7 +22,7 @@ function Deployment() {
                                 </a>
                             </td>
                             <td>
-                                <a href="https://react-deployment-app.firebaseapp.com/">
+                                <a href="https://react-deployment-app-5aab9.web.app/">
                                     Live Demo
                                 </a>
                             </td>
@@ -35,11 +36,16 @@ function Deployment() {
                                     Live Demo
                                 </a>
                             </td>
-                            {/* <td>
-                                <a href="https://create-deployment-app-p7.herokuapp.com/">
+                            <td>
+                                <a href="https://react-deploy-app-3z8pv6axp-hardik6869.vercel.app/">
                                     Live Demo
                                 </a>
-                            </td> */}
+                            </td>
+                            <td>
+                                <a href="https://react-deployment-p7.herokuapp.com/">
+                                    Live Demo
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
