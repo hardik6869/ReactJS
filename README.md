@@ -12,5 +12,5 @@ Github
 Netlify
 [Live Demo](https://react-deployment-p7.netlify.app/)
 
-Heroku
-[Live Demo](https://create-deployment-app-p7.herokuapp.com/)
+<!-- Heroku
+[Live Demo](https://create-deployment-app-p7.herokuapp.com/) -->

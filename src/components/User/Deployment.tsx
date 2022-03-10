@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 function Deployment() {
     return (
@@ -13,7 +12,7 @@ function Deployment() {
                             <td>Firebase</td>
                             <td>Github</td>
                             <td>Netlify</td>
-                            <td>Heroku</td>
+                            {/* <td>Heroku</td> */}
                         </tr>
                         <tr>
                             <td className="p-3">
@@ -36,11 +35,11 @@ function Deployment() {
                                     Live Demo
                                 </a>
                             </td>
-                            <td>
+                            {/* <td>
                                 <a href="https://create-deployment-app-p7.herokuapp.com/">
                                     Live Demo
                                 </a>
-                            </td>
+                            </td> */}
                         </tr>
                     </tbody>
                 </table>
