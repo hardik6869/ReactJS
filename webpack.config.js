@@ -68,11 +68,11 @@ module.exports = {
         open: true,
         historyApiFallback:true,
         port : 3000,
-        // proxy: {
-        //     "/": {
-        //     target: "http://localhost:5000",
-        //     secure: false,
-        //     },
-        //     },
+        proxy: {
+            "/": {
+            target: "http://localhost:5000",
+            secure: false,
+            },
+            },
     }
 }
