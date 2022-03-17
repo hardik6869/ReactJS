@@ -1,8 +1,9 @@
 import React from 'react';
+import SignUp from './component/SignUp/SignUp';
 const App = (): JSX.Element => {
     return (
         <>
-            <h1 className="text-center text-muted"> Practical-8 </h1>
+            <SignUp />
         </>
     );
 };

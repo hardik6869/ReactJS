@@ -5,70 +5,70 @@ const path = require("path");
 
 const webpack = require("webpack");
 module.exports = {
-    output :{
-        path :path.resolve(__dirname,"build"),
-        filename : "bundle.js"
+    output: {
+        path: path.resolve(__dirname, "build"),
+        filename: "bundle.js"
     },
-    resolve:{
-        extensions:[".ts",".tsx",".js",".jsx"]
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".jsx"]
     },
-    module:{
-        rules:[
+    module: {
+        rules: [
             {
-                test:/\.(js|jsx|ts|tsx)$/,
+                test: /\.(js|jsx|ts|tsx)$/,
                 exclude: /node_modules/,
-                use:[
+                use: [
                     {
-                        loader:"babel-loader"
+                        loader: "babel-loader"
                     }
                 ]
             },
             {
-                test:/\.html$/,
-                use:[
+                test: /\.html$/,
+                use: [
                     {
-                        loader:"html-loader"
+                        loader: "html-loader"
                     }
                 ]
             },
             {
-                test:/\.(png|jpe?g|gif)$/i,
-                use:[
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
                     {
-                        loader:"file-loader"
-                    }
-                ]
+                        loader: 'file-loader',
+                    },
+                ],
             },
             {
-                test:/\.s[ac]ss$/i,
-                use:[MiniCssExtractPlugin.loader,"css-loader","sass-loader"],
+                test: /\.s[ac]ss$/i,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader,'css-loader','sass-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
 
         ]
     },
-    plugins:[
+    plugins: [
         new HtmlWebpackPlugin({
-            filename : "index.html",
-            template : "./public/index.html"
+            filename: "index.html",
+            template: "./public/index.html"
         }),
         new MiniCssExtractPlugin({
             filename: 'static/css/[name].[contenthash:8].css',
             chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
         }),
         new webpack.DefinePlugin({
-            "process.env":{
-                "NODE_ENV":JSON.stringify(process.env.NODE_ENV)
+            "process.env": {
+                "NODE_ENV": JSON.stringify(process.env.NODE_ENV)
             }
         })
     ],
-    devServer :{
+    devServer: {
         open: true,
-        historyApiFallback:true,
-        port : 3000,
+        historyApiFallback: true,
+        port: 3000,
         // proxy: {
         //     "/": {
         //     target: "http://localhost:5000",
