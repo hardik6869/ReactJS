@@ -41,18 +41,19 @@ module.exports = {
             },
             {
                 test:/\.s[ac]ss$/i,
-                use:[MiniCssExtractPlugin.loader,"css-loader","sass-loader"]
+                use:[MiniCssExtractPlugin.loader,"css-loader","sass-loader"],
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                use: [MiniCssExtractPlugin.loader,'css-loader','sass-loader'],
             },
+
         ]
     },
     plugins:[
         new HtmlWebpackPlugin({
             filename : "index.html",
-            template:"./public/index.html"
+            template : "./public/index.html"
         }),
         new MiniCssExtractPlugin({
             filename: 'static/css/[name].[contenthash:8].css',
@@ -68,11 +69,11 @@ module.exports = {
         open: true,
         historyApiFallback:true,
         port : 3000,
-        proxy: {
-            "/": {
-            target: "http://localhost:5000",
-            secure: false,
-            },
-            },
+        // proxy: {
+        //     "/": {
+        //     target: "http://localhost:5000",
+        //     secure: false,
+        //     },
+        //     },
     }
 }

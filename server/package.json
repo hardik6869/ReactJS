@@ -1,21 +1,31 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    
-    "start": "node index",
-    "dev" : "nodemon index"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  }
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index",
+        "dev": "nodemon index",
+        "lint": "eslint src/**/*.{ts,tsx} --quiet --fix",
+        "format": "prettier --write src/**/*.ts{,x}"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@types/node": "^17.0.21",
+        "@types/react": "^17.0.40",
+        "express": "^4.17.3",
+        "typescript": "^4.6.2"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.15.0",
+        "@typescript-eslint/parser": "^5.15.0",
+        "eslint": "^8.11.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.29.4",
+        "nodemon": "^2.0.15",
+        "prettier": "^2.6.0"
+    }
 }
-
