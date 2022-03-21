@@ -6,10 +6,20 @@ const SignUp = () => {
     return (
         <>
             <div className="container">
-                <div className=" card bg-grey mt-5 p-3">
-                    <h4 className="text-center p-4"> Sign Up </h4>
+                <div className="bg-grey font-weight-bold mt-5 p-3">
                     <div className="row">
                         <div className="form-group col-md-5">
+                            <p className="font-weight-bold h2 py-4">Sign Up</p>
+                            <div className="text-center">
+                                <label className="cursor-pointer" role="button">
+                                    <input
+                                        type="file"
+                                        accept="image/*"
+                                        hidden
+                                    />
+                                    Photo +
+                                </label>
+                            </div>
                             <label>Name</label>
                             <input
                                 type="text"
@@ -41,8 +51,9 @@ const SignUp = () => {
                                 className="form-control"
                             />
                         </div>
-                        <div>
+                        <div className="">
                             <img
+                                className=""
                                 src={Signup_Image}
                                 style={{width: 'uto', height: '100%'}}
                             />
