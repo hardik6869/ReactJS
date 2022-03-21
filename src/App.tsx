@@ -1,9 +1,36 @@
 import React from 'react';
+import {Route, Routes, Link} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Home from './component/Home';
+import SignIn from './component/signin/SignIn';
 import SignUp from './component/SignUp/SignUp';
 const App = (): JSX.Element => {
     return (
         <>
-            <SignUp />
+            <nav className="navbar navbar-expand-sm navbar-white bg-info justify-content-between">
+                <div className="container">
+                    <Link to={'/'} className="btn text-white shadow-lg border">
+                        <i className="fa fa-home"> Home</i>
+                    </Link>
+                    <div className="form-inline">
+                        <Link
+                            to={'/signin'}
+                            className="btn text-white shadow-lg border">
+                            <i className="fa fa-user"> SignIn</i>
+                        </Link>
+                        <Link
+                            to={'/signup'}
+                            className="btn text-white shadow-lg border ml-3">
+                            <i className="fa fa-users"> SignUp</i>
+                        </Link>
+                    </div>
+                </div>
+            </nav>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/signup" element={<SignUp />} />
+            </Routes>
         </>
     );
 };
