@@ -1,0 +1,58 @@
+export const React_Pract = [
+    {
+        id: '1',
+        title: 'practical-1',
+        decription: 'Practical-1',
+        image: '',
+        demo: 'https://pract-1-cra.netlify.app/',
+    },
+    {
+        id: '2',
+        title: 'practical-2',
+        decription: 'Practical-2',
+        image: '',
+        demo: 'https://weather-informatiion-app.netlify.app/',
+    },
+    {
+        id: '3',
+        title: 'practical-3',
+        decription: 'Practical-3',
+        image: '',
+        demo: 'https://zealous-williams-05a4f2.netlify.app/',
+    },
+    {
+        id: '4',
+        title: 'practical-4',
+        decription: 'Practical-4',
+        image: '',
+        demo: 'https://todo-react-app-p-4.netlify.app/',
+    },
+    {
+        id: '5',
+        title: 'practical-5',
+        decription: 'Practical-5',
+        image: '',
+        demo: 'https://user-list-react-app.netlify.app/',
+    },
+    {
+        id: '6',
+        title: 'practical-6',
+        decription: 'Practical-6',
+        image: '',
+        demo: 'https://user-list-app-p6.netlify.app/',
+    },
+    {
+        id: '7',
+        title: 'practical-7',
+        decription: 'Practical-7',
+        image: '',
+        demo: 'https://deployment-p7.netlify.app/',
+    },
+    {
+        id: '8',
+        title: 'practical-8',
+        decription: 'Practical-8',
+        image: '',
+        demo: '',
+    },
+];

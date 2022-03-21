@@ -4,24 +4,25 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import Home from './component/Home';
 import SignIn from './component/signin/SignIn';
 import SignUp from './component/SignUp/SignUp';
+import {FaHome, FaSignInAlt, FaUser} from 'react-icons/fa';
 const App = (): JSX.Element => {
     return (
         <>
             <nav className="navbar navbar-expand-sm navbar-white bg-info justify-content-between">
                 <div className="container">
                     <Link to={'/'} className="btn text-white shadow-lg border">
-                        <i className="fa fa-home"> Home</i>
+                        <FaHome /> Home
                     </Link>
                     <div className="form-inline">
                         <Link
                             to={'/signin'}
                             className="btn text-white shadow-lg border">
-                            <i className="fa fa-user"> SignIn</i>
+                            <FaSignInAlt /> SignIn
                         </Link>
                         <Link
                             to={'/signup'}
                             className="btn text-white shadow-lg border ml-3">
-                            <i className="fa fa-users"> SignUp</i>
+                            <FaUser /> SignUp
                         </Link>
                     </div>
                 </div>

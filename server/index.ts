@@ -2,7 +2,7 @@ import express from 'express';
 const path = require('path');
 const app = express();
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     res.send({name: 'Hello World'});
     console.log('Data Fetch Successfully');
 });
