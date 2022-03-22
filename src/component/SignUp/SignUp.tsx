@@ -1,31 +1,15 @@
 import React, {FC, FormEvent, useRef, useState} from 'react';
 import './signup.css';
 import Signup_Image from './Sign_Logo.png';
-import {Formik} from 'formik';
+import {Field, Formik} from 'formik';
 import {Button} from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
 import {updateVal} from '../../reducers/registerSlice';
-import * as Yup from 'yup';
+import {SignUpSchema} from '../validation/ValidationSchema';
 
 const SignUp: FC = () => {
     const dispatch = useDispatch();
     const imageRef: React.MutableRefObject<undefined> = useRef();
-
-    const validate = Yup.object({
-        name: Yup.string()
-            .max(15, 'Must be 15 characters or less')
-            .required('Required'),
-        email: Yup.string()
-            .email('Email is invalid')
-            .required('Email is required'),
-        number: Yup.number().required('Number is Required'),
-        password: Yup.string()
-            .min(6, 'Password must be at least 6 charaters')
-            .required('Password is required'),
-        confirm_password: Yup.string()
-            .oneOf([Yup.ref('password'), null], 'Password must match')
-            .required('Confirm password is required'),
-    });
 
     return (
         <>
@@ -40,7 +24,7 @@ const SignUp: FC = () => {
                             confirm_password: '',
                             image: null,
                         }}
-                        validationSchema={validate}
+                        validationSchema={SignUpSchema}
                         onSubmit={(values) => {
                             dispatch(
                                 updateVal({
@@ -53,12 +37,7 @@ const SignUp: FC = () => {
                                 }),
                             );
                         }}>
-                        {({
-                            handleSubmit,
-                            handleChange,
-                            handleBlur,
-                            setFieldValue,
-                        }) => {
+                        {({handleSubmit, setFieldValue, errors, touched}) => {
                             return (
                                 <form onSubmit={handleSubmit}>
                                     <div className="row">
@@ -89,59 +68,75 @@ const SignUp: FC = () => {
                                                         hidden
                                                     />
                                                     Photo +
+                                                    {errors.image &&
+                                                    touched.image ? (
+                                                        <p className="error_message">
+                                                            {errors.image}
+                                                        </p>
+                                                    ) : null}
                                                 </label>
                                             </div>
                                             <label>Name</label>
-                                            <input
+                                            <Field
                                                 type="text"
                                                 name="name"
-                                                onChange={(event: FormEvent) =>
-                                                    handleChange(event)
-                                                }
-                                                onBlur={handleBlur}
                                                 className="form-control"
                                             />
+                                            {errors.name && touched.name ? (
+                                                <p className="error_message">
+                                                    {errors.name}
+                                                </p>
+                                            ) : null}
 
                                             <label>Email</label>
-                                            <input
+                                            <Field
                                                 type="email"
                                                 name="email"
-                                                onChange={(event: FormEvent) =>
-                                                    handleChange(event)
-                                                }
-                                                onBlur={handleBlur}
                                                 className="form-control"
                                             />
+                                            {errors.email && touched.email ? (
+                                                <p className="error_message">
+                                                    {errors.email}
+                                                </p>
+                                            ) : null}
+
                                             <label>PhoneNo</label>
-                                            <input
+                                            <Field
                                                 type="number"
                                                 name="number"
-                                                onChange={(event: FormEvent) =>
-                                                    handleChange(event)
-                                                }
-                                                onBlur={handleBlur}
                                                 className="form-control"
                                             />
+                                            {errors.number && touched.number ? (
+                                                <p className="error_message">
+                                                    {errors.number}
+                                                </p>
+                                            ) : null}
+
                                             <label>Password</label>
-                                            <input
+                                            <Field
                                                 type="password"
                                                 name="password"
-                                                onChange={(event: FormEvent) =>
-                                                    handleChange(event)
-                                                }
-                                                onBlur={handleBlur}
                                                 className="form-control"
                                             />
+                                            {errors.password &&
+                                            touched.password ? (
+                                                <p className="error_message">
+                                                    {errors.password}
+                                                </p>
+                                            ) : null}
+
                                             <label>Confirm Password</label>
-                                            <input
+                                            <Field
                                                 type="password"
                                                 name="confirm_password"
-                                                onChange={(event: FormEvent) =>
-                                                    handleChange(event)
-                                                }
-                                                onBlur={handleBlur}
                                                 className="form-control"
                                             />
+                                            {errors.confirm_password &&
+                                            touched.confirm_password ? (
+                                                <p className="error_message">
+                                                    {errors.confirm_password}
+                                                </p>
+                                            ) : null}
                                         </div>
                                         <div>
                                             <img
