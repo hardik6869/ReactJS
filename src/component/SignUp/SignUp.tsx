@@ -5,10 +5,28 @@ import {Formik} from 'formik';
 import {Button} from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
 import {updateVal} from '../../reducers/registerSlice';
+import * as Yup from 'yup';
 
 const SignUp: FC = () => {
     const dispatch = useDispatch();
     const imageRef: React.MutableRefObject<undefined> = useRef();
+
+    const validate = Yup.object({
+        name: Yup.string()
+            .max(15, 'Must be 15 characters or less')
+            .required('Required'),
+        email: Yup.string()
+            .email('Email is invalid')
+            .required('Email is required'),
+        number: Yup.number().required('Number is Required'),
+        password: Yup.string()
+            .min(6, 'Password must be at least 6 charaters')
+            .required('Password is required'),
+        confirm_password: Yup.string()
+            .oneOf([Yup.ref('password'), null], 'Password must match')
+            .required('Confirm password is required'),
+    });
+
     return (
         <>
             <div className="container">
@@ -22,6 +40,7 @@ const SignUp: FC = () => {
                             confirm_password: '',
                             image: null,
                         }}
+                        validationSchema={validate}
                         onSubmit={(values) => {
                             dispatch(
                                 updateVal({
@@ -67,6 +86,7 @@ const SignUp: FC = () => {
                                                                     .files[0],
                                                             );
                                                         }}
+                                                        hidden
                                                     />
                                                     Photo +
                                                 </label>
@@ -81,6 +101,7 @@ const SignUp: FC = () => {
                                                 onBlur={handleBlur}
                                                 className="form-control"
                                             />
+
                                             <label>Email</label>
                                             <input
                                                 type="email"
