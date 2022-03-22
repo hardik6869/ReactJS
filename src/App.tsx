@@ -1,7 +1,6 @@
 import React from 'react';
 import {Route, Routes, Link} from 'react-router-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
-import Home from './component/Home';
+import Home from './component/Practicals/PracticalList';
 import SignIn from './component/signin/SignIn';
 import SignUp from './component/SignUp/SignUp';
 import {FaHome, FaSignInAlt, FaUser} from 'react-icons/fa';
