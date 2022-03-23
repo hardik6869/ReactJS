@@ -16,10 +16,14 @@ export const SignUpSchema = Yup.object({
     image: Yup.mixed()
         .nullable()
         .required('Profile Picture is Require')
-        .test('fileSize', 'Image Size is too much big', (value) => {
+        .test('fileSize', 'Image Size to much big', (value) => {
+            return !value || (value !== null && value.size <= 2000000);
+        })
+        .test('fileType', 'Image should be jpg or png only', (value) => {
             return (
                 !value ||
-                (value !== null && ['img/jpg', 'img/png'].includes(value.type))
+                (value !== null &&
+                    ['image/jpg', 'image/png'].includes(value.type))
             );
         }),
 });
