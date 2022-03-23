@@ -1,4 +1,4 @@
-import React, {FC, FormEvent, useRef} from 'react';
+import React, {FC, FormEvent, useEffect, useRef} from 'react';
 import './signup.css';
 import Signup_Image from './Sign_Logo.png';
 import {Field, Formik} from 'formik';
@@ -7,6 +7,7 @@ import {useDispatch} from 'react-redux';
 import {updateVal} from '../../reducers/registerSlice';
 import {SignUpSchema} from '../validation/ValidationSchema';
 import {useNavigate} from 'react-router';
+import {login, logout} from '../../reducers/logoutSlice';
 
 const SignUp: FC = () => {
     const dispatch = useDispatch();
@@ -39,6 +40,9 @@ const SignUp: FC = () => {
                                 }),
                                 navigate('/signin'),
                             );
+                            dispatch(() => {
+                                login(true);
+                            });
                         }}>
                         {({handleSubmit, setFieldValue, errors, touched}) => {
                             return (

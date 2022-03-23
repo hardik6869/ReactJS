@@ -1,5 +1,5 @@
 import {Field, Formik} from 'formik';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Form} from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router';
@@ -12,6 +12,10 @@ const SignIn = () => {
     const data = JSON.parse(localStorage.getItem('login'));
     const navigate = useNavigate();
     const dispatch = useDispatch();
+
+    const loginHandler = () => {
+        dispatch(login(true));
+    };
     return (
         <>
             <div className="container">
@@ -28,8 +32,6 @@ const SignIn = () => {
                                     values.email === data.email &&
                                     values.password === data.password
                                 ) {
-                                    console.log('successfull');
-                                    dispatch(login);
                                     navigate('/home');
                                 } else {
                                     alert(
@@ -72,7 +74,8 @@ const SignIn = () => {
                                         <div>
                                             <Button
                                                 className="btn btn-primary"
-                                                type="submit">
+                                                type="submit"
+                                                onClick={() => loginHandler()}>
                                                 Submit
                                             </Button>
                                             <Button
