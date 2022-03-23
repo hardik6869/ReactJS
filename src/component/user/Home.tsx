@@ -7,7 +7,7 @@ import {login} from '../../reducers/logoutSlice';
 const Home = () => {
     const dispatch = useDispatch();
     const logoutHandler = () => {
-        dispatch(login('login'));
+        dispatch(login(login));
         console.log('logout handler called');
     };
     const data = JSON.parse(localStorage.getItem('login'));
@@ -23,6 +23,7 @@ const Home = () => {
                             {data.email} <br></br>and phone number {data.number}
                         </p>
                         <div className="user-details">
+                            <img src={data.image} />
                             <h3>{data.name}</h3>
                             <h3>{data.number}</h3>
                             <h3>{data.email}</h3>

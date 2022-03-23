@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const isLogin = {Login: false};
 
-const LoginSlice = createSlice({
+const logoutSlice = createSlice({
     name: 'isLogin',
     initialState: isLogin,
     reducers: {
@@ -12,8 +12,14 @@ const LoginSlice = createSlice({
                 isLogin: false,
             };
         },
+        logout: (state, action) => {
+            localStorage.clear();
+            return {
+                isLogin: true,
+            };
+        },
     },
 });
 
-export default LoginSlice.reducer;
-export const {login} = LoginSlice.actions;
+export default logoutSlice.reducer;
+export const {login, logout} = logoutSlice.actions;

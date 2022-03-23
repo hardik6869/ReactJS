@@ -6,8 +6,7 @@ import {Button, Form} from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
 import {updateVal} from '../../reducers/registerSlice';
 import {SignUpSchema} from '../validation/ValidationSchema';
-import {Navigate, useNavigate} from 'react-router';
-import Home from '../user/Home';
+import {useNavigate} from 'react-router';
 
 const SignUp: FC = () => {
     const dispatch = useDispatch();
@@ -44,11 +43,6 @@ const SignUp: FC = () => {
                         {({handleSubmit, setFieldValue, errors, touched}) => {
                             return (
                                 <Form onSubmit={handleSubmit}>
-                                    {JSON.parse(
-                                        localStorage.getItem('signin'),
-                                    ) ? (
-                                        <Navigate to="/home" />
-                                    ) : null}
                                     <div className="row">
                                         <div className="form-group col-md-5">
                                             <p className="font-weight-bold h2 py-4">
