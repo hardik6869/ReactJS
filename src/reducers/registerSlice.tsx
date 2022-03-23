@@ -5,6 +5,7 @@ const entities = {
     number: '',
     password: '',
     confirm_password: '',
+    image: null,
 };
 
 const registerSlice = createSlice({
@@ -13,7 +14,7 @@ const registerSlice = createSlice({
     reducers: {
         updateVal: (state, action) => {
             console.log(action.payload);
-
+            localStorage.setItem('login', JSON.stringify(action.payload));
             return {
                 name: action.payload.name,
                 email: action.payload.email,

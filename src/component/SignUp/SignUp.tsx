@@ -1,15 +1,18 @@
-import React, {FC, FormEvent, useRef, useState} from 'react';
+import React, {FC, FormEvent, useRef} from 'react';
 import './signup.css';
 import Signup_Image from './Sign_Logo.png';
 import {Field, Formik} from 'formik';
-import {Button} from 'react-bootstrap';
+import {Button, Form} from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
 import {updateVal} from '../../reducers/registerSlice';
 import {SignUpSchema} from '../validation/ValidationSchema';
+import {Navigate, useNavigate} from 'react-router';
+import Home from '../user/Home';
 
 const SignUp: FC = () => {
     const dispatch = useDispatch();
     const imageRef: React.MutableRefObject<undefined> = useRef();
+    const navigate = useNavigate();
 
     return (
         <>
@@ -33,13 +36,19 @@ const SignUp: FC = () => {
                                     number: values.number,
                                     password: values.password,
                                     confirm_password: values.confirm_password,
-                                    img: URL.createObjectURL(values.image),
+                                    image: URL.createObjectURL(values.image),
                                 }),
+                                navigate('/signin'),
                             );
                         }}>
                         {({handleSubmit, setFieldValue, errors, touched}) => {
                             return (
-                                <form onSubmit={handleSubmit}>
+                                <Form onSubmit={handleSubmit}>
+                                    {JSON.parse(
+                                        localStorage.getItem('signin'),
+                                    ) ? (
+                                        <Navigate to="/home" />
+                                    ) : null}
                                     <div className="row">
                                         <div className="form-group col-md-5">
                                             <p className="font-weight-bold h2 py-4">
@@ -160,7 +169,7 @@ const SignUp: FC = () => {
                                             Reset
                                         </Button>
                                     </div>
-                                </form>
+                                </Form>
                             );
                         }}
                     </Formik>

@@ -1,8 +1,9 @@
 import React from 'react';
 import {Route, Routes, Link} from 'react-router-dom';
-import Home from './component/Practicals/PracticalList';
+import Visitor from './component/Practicals/PracticalList';
 import SignIn from './component/signin/SignIn';
 import SignUp from './component/SignUp/SignUp';
+import Home from './component/user/Home';
 import {FaHome, FaSignInAlt, FaUser} from 'react-icons/fa';
 const App = (): JSX.Element => {
     return (
@@ -27,9 +28,10 @@ const App = (): JSX.Element => {
                 </div>
             </nav>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Visitor />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
+                <Route path="/home" element={<Home />} />
             </Routes>
         </>
     );

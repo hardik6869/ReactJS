@@ -33,7 +33,7 @@ const PracticalList = () => {
                             </Card.Title>
                         </Link>
                         <Card.Text as="div">
-                            <div className="my-3">{value.description}</div>
+                            <div className="my-3">{value.decription}</div>
                         </Card.Text>
                         <Button variant="primary">
                             <a href={value.demo}></a>Demo Link
