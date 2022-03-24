@@ -94,7 +94,8 @@ const SignIn = (): JSX.Element => {
                                 }}
                             </Formik>
                             <a
-                                className="cursor-pointer mt-4 text-center"
+                                className="mt-4 text-center"
+                                style={{cursor: 'pointer'}}
                                 onClick={() => navigate('/signUp')}>
                                 Sign in
                             </a>
