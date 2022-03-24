@@ -1,8 +1,6 @@
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {Navigate} from 'react-router';
-import {Link} from 'react-router-dom';
-import {login, logout} from '../../reducers/logoutSlice';
+import {useSelector} from 'react-redux';
+import {userAction} from '../interface/Interface';
 
 const Home = () => {
     const {isLogin} = useSelector((state) => state.login);

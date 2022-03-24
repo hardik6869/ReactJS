@@ -1,10 +1,9 @@
 import {Field, Formik} from 'formik';
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Button, Form} from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
 import {useNavigate} from 'react-router';
-import {login, logout} from '../../reducers/logoutSlice';
-import {signin} from '../../reducers/registerSlice';
+import {login} from '../../reducers/logoutSlice';
 import '../SignUp/signup.css';
 import {SignInSchema} from '../validation/ValidationSchema';
 
@@ -20,7 +19,7 @@ const SignIn = () => {
         <>
             <div className="container">
                 <div className="d-flex justify-content-center align-item-center bg-grey font-weight-bold mt-5 p-3">
-                    <div className="col-md-5">
+                    <div className="card p-5 col-md-5 shadow-lg radious-5 border-5">
                         <Formik
                             initialValues={{
                                 email: '',
@@ -43,14 +42,14 @@ const SignIn = () => {
                                 return (
                                     <Form onSubmit={handleSubmit}>
                                         <div className="form-group">
-                                            <h4 className="text-center">
+                                            <h4 className="text-center font-weight-bold mb-4">
                                                 Sign In
                                             </h4>
                                             <label>Email</label>
                                             <Field
                                                 type="text"
                                                 name="email"
-                                                className="form-control"
+                                                className="form-control mb-4"
                                             />
                                             {errors.email && touched.email ? (
                                                 <p className="error_message">
@@ -71,7 +70,7 @@ const SignIn = () => {
                                                 </p>
                                             ) : null}
                                         </div>
-                                        <div>
+                                        <div className="text-center pt-3">
                                             <Button
                                                 className="btn btn-primary"
                                                 type="submit"
@@ -88,6 +87,11 @@ const SignIn = () => {
                                 );
                             }}
                         </Formik>
+                        <a
+                            className="cursor-pointer mt-4 text-center"
+                            onClick={() => navigate('/signUp')}>
+                            Sign in
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {LinkContainer} from 'react-router-bootstrap';
 import {Nav, Navbar, Container, NavDropdown} from 'react-bootstrap';
@@ -7,22 +7,26 @@ import {Link, useNavigate} from 'react-router-dom';
 
 const Header = () => {
     const dispatch = useDispatch();
-    const {isLogin} = useSelector((state) => state.login);
     const data = JSON.parse(localStorage.getItem('login'));
+    const navigate = useNavigate();
     const logoutHandler = () => {
         dispatch(logout(false));
     };
-    const navigate = useNavigate();
 
-    console.log(isLogin);
+    if (data) {
+        navigate('/signin');
+    } else if (!data === null) {
+        navigate('/home');
+    } else {
+    }
 
     return (
         <header>
-            <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+            <Navbar bg="info" expand="lg" collapseOnSelect>
                 <Container>
                     <Link to="/">
                         <Navbar.Brand>
-                            <i className="fas fa-store"></i> Greate Shop
+                            <i className="fas fa-store"></i> React Practica
                         </Navbar.Brand>
                     </Link>
 
@@ -31,11 +35,12 @@ const Header = () => {
                         <Nav className="ml-auto">
                             {data ? (
                                 <NavDropdown title={data.name} id="username">
-                                    <li onClick={() => navigate('/Home')}>
+                                    <li onClick={() => navigate('/home')}>
                                         <NavDropdown.Item>
                                             Profile
                                         </NavDropdown.Item>
                                     </li>
+
                                     <NavDropdown.Item onClick={logoutHandler}>
                                         Logout
                                     </NavDropdown.Item>

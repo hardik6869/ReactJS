@@ -16,8 +16,8 @@ const SignUp: FC = () => {
 
     return (
         <>
-            <div className="container">
-                <div className="bg-grey font-weight-bold mt-2 p-3">
+            <div className="container ">
+                <div className="mt-5 ml-5 pl-3 bg-grey font-weight-bold mt-2 p-3">
                     <Formik
                         initialValues={{
                             name: '',
