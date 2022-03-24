@@ -11,8 +11,6 @@ import {SignInSchema} from '../validation/ValidationSchema';
 const SignIn = (): JSX.Element => {
     const data: userAction = JSON.parse(localStorage.getItem('login'));
     const {action} = useSelector((state: RootStateOrAny) => state.login);
-    console.log(action);
-
     const navigate: NavigateFunction = useNavigate();
     const dispatch = useDispatch();
 
@@ -65,7 +63,7 @@ const SignIn = (): JSX.Element => {
 
                                                 <label>Password</label>
                                                 <Field
-                                                    type="text"
+                                                    type="password"
                                                     name="password"
                                                     className="form-control"
                                                 />

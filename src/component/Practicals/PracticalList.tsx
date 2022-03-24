@@ -1,51 +1,52 @@
 import React from 'react';
 import {Button, Card, Col} from 'react-bootstrap';
-import {DefaultRootState, useSelector} from 'react-redux';
+import {RootStateOrAny, useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {practicalAction} from '../interface/Interface';
 
 const PracticalList = () => {
-    const records = useSelector(
-        (state: DefaultRootState) => state.practical.practical[0],
+    const records = useSelector<practicalAction>(
+        (state: RootStateOrAny) => state.practical.practical[0],
     );
+    const ReactPractical: practicalAction = records.map(
+        (value: practicalAction, index: number) => {
+            const action = index % 2 === 0;
 
-    const ReactPractical = records.map((value: any, index: number) => {
-        const action = value.id % 2;
-        return (
-            <Col
-                key={index}
-                className={
-                    action == 0
-                        ? 'd-flex align-items-center '
-                        : 'd-flex align-items-right'
-                }
-                sm={12}
-                md={6}
-                lg={4}
-                xl={6}>
-                <Card className="my-3 p-3 rounded">
-                    <Link to={`${value.id}`}>
-                        <Card.Img src={value.image} variant="top" />
-                    </Link>
-                    <Card.Body>
+            return (
+                <Card
+                    key={index}
+                    className={action ? 'bg-gray my-3 shadow' : ' my-3 shadow'}>
+                    <div className="my-3 p-3 rounded">
                         <Link to={`${value.id}`}>
-                            <Card.Title as="div">
-                                <strong>{value.title}</strong>
-                            </Card.Title>
+                            <Card.Img
+                                src={value.image}
+                                className="shadow radioue border w-55"
+                                variant="top"
+                            />
                         </Link>
-                        <Card.Text as="div">
-                            <div className="my-3">{value.decription}</div>
-                        </Card.Text>
-                        <Button variant="primary">
-                            <a href={value.demo}></a>Demo Link
-                        </Button>
-                    </Card.Body>
+                        <Card.Body>
+                            <Link to={`${value.id}`}>
+                                <Card.Title as="div">
+                                    <strong>{value.title}</strong>
+                                </Card.Title>
+                            </Link>
+                            <Card.Text as="div">
+                                <div className="my-3">{value.decription}</div>
+                            </Card.Text>
+                            <Button variant="primary">
+                                <a href={value.demo}></a>Demo Link
+                            </Button>
+                        </Card.Body>
+                    </div>
                 </Card>
-            </Col>
-        );
-    });
+            );
+        },
+    );
     return (
         <>
-            <div className="container">{ReactPractical}</div>
+            <div className="container float-right bg-gray">
+                <div className="text-center col-md-7">{ReactPractical}</div>
+            </div>
         </>
     );
 };
