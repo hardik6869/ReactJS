@@ -1,14 +1,20 @@
-import {createSlice} from '@reduxjs/toolkit';
-const entities = {
+import {createSlice, Slice, SliceCaseReducers} from '@reduxjs/toolkit';
+import {userAction} from '../component/interface/Interface';
+const entities: userAction = {
     name: '',
     email: '',
     number: '',
     password: '',
     confirm_password: '',
     image: null,
+    title: undefined,
 };
 
-const registerSlice = createSlice({
+const registerSlice: Slice<
+    userAction,
+    SliceCaseReducers<userAction>,
+    'signup'
+> = createSlice({
     name: 'signup',
     initialState: entities,
     reducers: {

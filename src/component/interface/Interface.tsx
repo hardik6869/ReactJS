@@ -2,7 +2,6 @@ import {ReactNode} from 'react';
 
 export interface userAction {
     title: ReactNode;
-    id: number;
     name: string;
     email: string;
     number: string;

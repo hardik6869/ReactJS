@@ -1,25 +1,18 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {LinkContainer} from 'react-router-bootstrap';
+import React from 'react';
+import {useDispatch} from 'react-redux';
 import {Nav, Navbar, Container, NavDropdown} from 'react-bootstrap';
 import {logout} from '../../reducers/logoutSlice';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link, NavigateFunction, useNavigate} from 'react-router-dom';
+import {userAction} from '../interface/Interface';
 
-const Header = () => {
+const Header = (): JSX.Element => {
     const dispatch = useDispatch();
-    const data = JSON.parse(localStorage.getItem('login'));
-    const navigate = useNavigate();
-    const logoutHandler = () => {
+    const data: userAction = JSON.parse(localStorage.getItem('login'));
+    const navigate: NavigateFunction = useNavigate();
+    const logoutHandler = (): void => {
+        navigate('/');
         dispatch(logout(false));
     };
-
-    if (data) {
-        navigate('/signin');
-    } else if (!data === null) {
-        navigate('/home');
-    } else {
-    }
-
     return (
         <header>
             <Navbar bg="info" expand="lg" collapseOnSelect>

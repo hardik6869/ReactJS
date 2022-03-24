@@ -5,6 +5,7 @@ import SignIn from './component/signin/SignIn';
 import SignUp from './component/SignUp/SignUp';
 import Home from './component/user/Home';
 import Header from './component/navbar/Header';
+import Error from './component/Error';
 const App = (): JSX.Element => {
     return (
         <>
@@ -13,8 +14,8 @@ const App = (): JSX.Element => {
                 <Route path="/" element={<Visitor />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
-
-                <Route path="/Home" element={<Home />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="*" element={<Error />} />
             </Routes>
         </>
     );

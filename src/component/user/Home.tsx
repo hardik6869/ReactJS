@@ -1,10 +1,10 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import {RootStateOrAny, useSelector} from 'react-redux';
 import {userAction} from '../interface/Interface';
 
-const Home = () => {
-    const {isLogin} = useSelector((state) => state.login);
-    const data = JSON.parse(localStorage.getItem('login'));
+const Home = (): JSX.Element => {
+    const {isLogin} = useSelector((state: RootStateOrAny) => state.login);
+    const data: userAction = JSON.parse(localStorage.getItem('login'));
 
     return (
         <>

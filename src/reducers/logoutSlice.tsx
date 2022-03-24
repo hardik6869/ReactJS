@@ -4,13 +4,22 @@ const logoutSlice = createSlice({
     name: 'isLogin',
     initialState: false,
     reducers: {
-        logout: (state, action) => {
+        logout: (
+            state: boolean,
+            action: {
+                payload: boolean | string;
+                type: string;
+            },
+        ) => {
             localStorage.clear();
             return {
                 isLogin: action.payload,
             };
         },
-        login: (state, action) => {
+        login: (
+            state: boolean,
+            action: {payload: boolean | string; type: string},
+        ) => {
             return {
                 isLogin: action.payload,
             };

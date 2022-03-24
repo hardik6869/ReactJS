@@ -1,4 +1,4 @@
-import React, {FC, FormEvent, useEffect, useRef} from 'react';
+import React, {FormEvent} from 'react';
 import './signup.css';
 import Signup_Image from './Sign_Logo.png';
 import {Field, Formik} from 'formik';
@@ -6,13 +6,12 @@ import {Button, Form} from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
 import {updateVal} from '../../reducers/registerSlice';
 import {SignUpSchema} from '../validation/ValidationSchema';
-import {useNavigate} from 'react-router';
-import {login, logout} from '../../reducers/logoutSlice';
+import {NavigateFunction, useNavigate} from 'react-router';
+import {login} from '../../reducers/logoutSlice';
 
-const SignUp: FC = () => {
+const SignUp = (): JSX.Element => {
     const dispatch = useDispatch();
-    const imageRef: React.MutableRefObject<undefined> = useRef();
-    const navigate = useNavigate();
+    const navigate: NavigateFunction = useNavigate();
 
     return (
         <>
@@ -60,7 +59,6 @@ const SignUp: FC = () => {
                                                         type="file"
                                                         id="image"
                                                         name="image"
-                                                        ref={imageRef}
                                                         accept="jpg, .jpeg, .png"
                                                         onChange={(
                                                             event: FormEvent,
