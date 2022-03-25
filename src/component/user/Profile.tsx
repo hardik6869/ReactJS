@@ -6,24 +6,29 @@ const Profile = () => {
     const user: userAction = JSON.parse(localStorage.getItem('login'));
     return (
         <>
-            <div className="container mt-5">
-                <div className="main">
-                    <div className="card_d">
-                        <div className="overlay d-none">
-                            <small className="fa fa-close"></small>
-                            <img src={user.image} />
+            <div className="container profile_div d-flex justify-content-center">
+                <div className="card shadow-lg border radious-3 m-5 p-1">
+                    <div className="upper">
+                        <img
+                            src="https://i.imgur.com/Qtrsrk5.jpg"
+                            className="img-fluid h-80"
+                        />
+                    </div>
+                    <div className="user text-center">
+                        <div className="profile">
+                            <img
+                                src={user.image}
+                                className="rounded-circle"
+                                width="100"
+                            />
                         </div>
-
-                        <div className="image">
-                            <span>
-                                <img id="userimage" src={user.image} />
-                            </span>
-                        </div>
-                        <div className="text">
-                            <h3>{user.name}</h3>
-                            <p>{user.email}</p>
-                            <p>{user.number}</p>
-                        </div>
+                    </div>
+                    <div className="mt-5 text-center">
+                        <h4 className="mb-0 mt-3">{user.name}</h4>
+                        <span className="text-muted d-block mb-2 mt-4">
+                            {user.email}
+                        </span>
+                        <div className="my-4">{user.number}</div>
                     </div>
                 </div>
             </div>

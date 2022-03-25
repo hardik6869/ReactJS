@@ -97,7 +97,7 @@ const SignIn = (): JSX.Element => {
                                 className="mt-4 text-center"
                                 style={{cursor: 'pointer'}}
                                 onClick={() => navigate('/signUp')}>
-                                Sign in
+                                Sign Up
                             </a>
                         </div>
                     </div>

@@ -19,7 +19,7 @@ const Header = (): JSX.Element => {
                 <Container>
                     <Link to="/">
                         <Navbar.Brand>
-                            <i className="fas fa-store"></i> React Practica
+                            <i className="fas fa-store"></i> React Practical
                         </Navbar.Brand>
                     </Link>
 
@@ -27,7 +27,10 @@ const Header = (): JSX.Element => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
                             {data ? (
-                                <NavDropdown title={data.name} id="username">
+                                <NavDropdown
+                                    title={data.name}
+                                    className="fa fa-circle-user"
+                                    id="username">
                                     <li onClick={() => navigate('/home')}>
                                         <NavDropdown.Item>
                                             Profile

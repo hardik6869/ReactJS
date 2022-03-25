@@ -19,7 +19,6 @@ const registerSlice: Slice<
     initialState: entities,
     reducers: {
         updateVal: (state, action) => {
-            console.log(action.payload);
             localStorage.setItem('login', JSON.stringify(action.payload));
             return {
                 name: action.payload.name,

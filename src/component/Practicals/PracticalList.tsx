@@ -27,15 +27,22 @@ const PracticalList = () => {
                         <Card.Body>
                             <Link to={`${value.id}`}>
                                 <Card.Title as="div">
-                                    <strong>{value.title}</strong>
+                                    <strong>
+                                        <h3> {value.title} </h3>
+                                    </strong>
                                 </Card.Title>
                             </Link>
                             <Card.Text as="div">
                                 <div className="my-3">{value.decription}</div>
                             </Card.Text>
-                            <Button variant="primary">
-                                <a href={value.demo}></a>Demo Link
-                            </Button>
+                            <a
+                                href={value.demo}
+                                className="btn btn-primary mr-3">
+                                Demo Link
+                            </a>
+                            <a href={value.github} className="btn btn-primary">
+                                Github Link
+                            </a>
                         </Card.Body>
                     </div>
                 </Card>

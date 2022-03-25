@@ -1,7 +1,6 @@
 import React from 'react';
 import {RootStateOrAny, useSelector} from 'react-redux';
-import {userAction} from '../interface/Interface';
-import Profile from './profile';
+import Profile from './Profile';
 
 const Home = (): JSX.Element => {
     const {isLogin} = useSelector((state: RootStateOrAny) => state.login);
