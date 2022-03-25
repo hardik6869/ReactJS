@@ -1,6 +1,4 @@
 import React, {FormEvent} from 'react';
-import './signup.css';
-import Signup_Image from './Sign_Logo.png';
 import {Field, Formik} from 'formik';
 import {Button, Form} from 'react-bootstrap';
 import {useDispatch} from 'react-redux';
@@ -8,6 +6,8 @@ import {updateVal} from '../../reducers/registerSlice';
 import {SignUpSchema} from '../validation/ValidationSchema';
 import {NavigateFunction, useNavigate} from 'react-router';
 import {login} from '../../reducers/logoutSlice';
+import Signup_Image from './Sign_Logo.png';
+import './signup.css';
 
 const SignUp = (): JSX.Element => {
     const dispatch = useDispatch();

@@ -9,7 +9,6 @@ const Home = (): JSX.Element => {
         <>
             {isLogin !== false && (
                 <>
-                    <div className="home-page-main"></div>
                     <Profile />
                 </>
             )}

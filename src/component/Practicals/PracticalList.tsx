@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Card, Col} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 import {RootStateOrAny, useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {practicalAction} from '../interface/Interface';

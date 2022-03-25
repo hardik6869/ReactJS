@@ -25,6 +25,7 @@ const Profile = () => {
                     </div>
                     <div className="mt-5 text-center">
                         <h4 className="mb-0 mt-3">{user.name}</h4>
+                        <hr className="font-weight-bolder mx-5" />
                         <span className="text-muted d-block mb-2 mt-4">
                             {user.email}
                         </span>
