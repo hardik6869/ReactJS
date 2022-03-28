@@ -1,28 +1,15 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 const logoutSlice = createSlice({
     name: 'isLogin',
     initialState: false,
     reducers: {
-        logout: (
-            state: boolean,
-            action: {
-                payload: boolean | string;
-                type: string;
-            },
-        ) => {
+        logout: (state, action: PayloadAction<boolean>) => {
             localStorage.clear();
-            return {
-                isLogin: action.payload,
-            };
+            return action.payload;
         },
-        login: (
-            state: boolean,
-            action: {payload: boolean | string; type: string},
-        ) => {
-            return {
-                isLogin: action.payload,
-            };
+        login: (state, action: PayloadAction<boolean>) => {
+            return action.payload;
         },
     },
 });
