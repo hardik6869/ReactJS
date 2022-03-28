@@ -1,0 +1,12 @@
+input {
+    background-color: #fffdea !important;
+    margin-bottom: 10px;
+}
+button {
+    margin: 10px 10px 10px 0px;
+}
+.error_message {
+    font-size: 0.7rem;
+    color: red;
+    font-weight: bold;
+}

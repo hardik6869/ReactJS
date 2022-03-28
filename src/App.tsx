@@ -1,42 +1,24 @@
 import React from 'react';
-import {Link, Route, Routes} from 'react-router-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
-import About from './component/About';
-import Services from './component/Services';
-import Todo from './component/Todo';
-
-class App extends React.Component {
-    render() {
-        return (
-            <>
-                <Router>
-                    <div className="navbar navbar-expand-lg navbar-light bg-dark">
-                        <div className="container ml-5">
-                            <div className="row">
-                                <h2 className="text-white"> TodoList </h2>
-                                <Link to={'/'} className="pl-5 nav-link">
-                                    <h5> Todo </h5>
-                                </Link>
-                                <Link
-                                    to={'/services'}
-                                    className="pl-5 nav-link">
-                                    <h5> Services </h5>
-                                </Link>
-                                <Link to={'/about'} className="pl-5 nav-link">
-                                    <h5> About </h5>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <Routes>
-                        <Route path="/" element={<Todo />} />
-                        <Route path="/services" element={<Services />} />
-                        <Route path="/about" element={<About />} />
-                    </Routes>
-                </Router>
-            </>
-        );
-    }
-}
+import {Route, Routes} from 'react-router-dom';
+import Visitor from './component/Practicals/PracticalList';
+import SignIn from './component/signin/SignIn';
+import SignUp from './component/SignUp/SignUp';
+import Home from './component/user/Home';
+import Header from './component/navbar/Header';
+import Error from './component/Error';
+const App = (): JSX.Element => {
+    return (
+        <>
+            <Header />
+            <Routes>
+                <Route path="/" element={<Visitor />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="*" element={<Error />} />
+            </Routes>
+        </>
+    );
+};
 
 export default App;
