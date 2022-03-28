@@ -24,10 +24,17 @@ const SignUp = (): JSX.Element => {
                             number: '',
                             password: '',
                             confirm_password: '',
-                            image: null,
+                            image: '',
                         }}
                         validationSchema={SignUpSchema}
-                        onSubmit={(values) => {
+                        onSubmit={(values: {
+                            name: string;
+                            email: string;
+                            number: string;
+                            password: string;
+                            confirm_password: string;
+                            image: string;
+                        }) => {
                             dispatch(
                                 updateVal({
                                     name: values.name,
@@ -37,11 +44,11 @@ const SignUp = (): JSX.Element => {
                                     confirm_password: values.confirm_password,
                                     image: URL.createObjectURL(values.image),
                                 }),
-                                navigate('/signin'),
                             );
-                            dispatch(() => {
-                                login(true);
-                            });
+                            navigate('/signin'),
+                                dispatch(() => {
+                                    login(true);
+                                });
                         }}>
                         {({handleSubmit, setFieldValue, errors, touched}) => {
                             return (

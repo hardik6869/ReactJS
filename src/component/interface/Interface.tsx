@@ -1,13 +1,10 @@
-import {ReactNode} from 'react';
-
 export interface userAction {
-    title: ReactNode;
     name: string;
     email: string;
     number: string;
     password: string;
     confirm_password: string;
-    image: null;
+    image: string;
 }
 export interface practicalAction {
     id: number;
@@ -15,4 +12,5 @@ export interface practicalAction {
     decription: string;
     image: string;
     demo: string;
+    github: string;
 }

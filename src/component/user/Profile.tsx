@@ -3,7 +3,7 @@ import {userAction} from '../interface/Interface';
 import './profile.css';
 
 const Profile = () => {
-    const user: userAction = JSON.parse(localStorage.getItem('login'));
+    const user: userAction = JSON.parse(localStorage.getItem('login') || '{}');
     return (
         <>
             <div className="container profile_div d-flex justify-content-center">

@@ -6,8 +6,7 @@ const entities: userAction = {
     number: '',
     password: '',
     confirm_password: '',
-    image: null,
-    title: undefined,
+    image: '',
 };
 
 const registerSlice: Slice<

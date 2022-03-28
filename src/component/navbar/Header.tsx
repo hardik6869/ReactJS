@@ -7,7 +7,7 @@ import {userAction} from '../interface/Interface';
 
 const Header = (): JSX.Element => {
     const dispatch = useDispatch();
-    const data: userAction = JSON.parse(localStorage.getItem('login'));
+    const data: userAction = JSON.parse(localStorage.getItem('login') || '{}');
     const navigate: NavigateFunction = useNavigate();
     const logoutHandler = (): void => {
         navigate('/');
@@ -26,7 +26,7 @@ const Header = (): JSX.Element => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
-                            {data ? (
+                            {Object.keys(data).length !== 0 ? (
                                 <NavDropdown
                                     title={data.name}
                                     className="fa fa-circle-user"

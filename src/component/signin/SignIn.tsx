@@ -9,7 +9,7 @@ import '../SignUp/signup.css';
 import {SignInSchema} from '../validation/ValidationSchema';
 
 const SignIn = (): JSX.Element => {
-    const data: userAction = JSON.parse(localStorage.getItem('login'));
+    const data: userAction = JSON.parse(localStorage.getItem('login') || '{}');
     const {action} = useSelector((state: RootStateOrAny) => state.login);
     const navigate: NavigateFunction = useNavigate();
     const dispatch = useDispatch();

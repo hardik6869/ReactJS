@@ -12,6 +12,7 @@ const practicalSlice: Slice<
             decription: string;
             image: string;
             demo: string;
+            github: string;
         }[][];
     },
     // eslint-disable-next-line @typescript-eslint/ban-types

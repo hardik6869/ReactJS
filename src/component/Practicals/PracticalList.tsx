@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import {practicalAction} from '../interface/Interface';
 
 const PracticalList = () => {
-    const records = useSelector<practicalAction>(
+    const records = useSelector(
         (state: RootStateOrAny) => state.practical.practical[0],
     );
     const ReactPractical: practicalAction = records.map(
